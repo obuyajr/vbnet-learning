@@ -1,0 +1,13 @@
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\bin\Debug\Purchase Order Form.exe.config
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\bin\Debug\Purchase Order Form.exe
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\bin\Debug\Purchase Order Form.pdb
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\bin\Debug\Purchase Order Form.xml
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.vbproj.AssemblyReference.cache
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.vbproj.SuggestedBindingRedirects.cache
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase_Order_Form.Resources.resources
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.vbproj.GenerateResource.cache
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.vbproj.CoreCompileInputs.cache
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.exe
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.xml
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.pdb
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase_Order_Form.frmPurchaseOrder.resources
