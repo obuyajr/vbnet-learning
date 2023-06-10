@@ -35,6 +35,13 @@ Partial Class frmPurchaseOrder
         Me.Panel2 = New System.Windows.Forms.Panel()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.Panel3 = New System.Windows.Forms.Panel()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.baseballpic = New System.Windows.Forms.PictureBox()
+        Me.tennispic = New System.Windows.Forms.PictureBox()
+        Me.footballpic = New System.Windows.Forms.PictureBox()
         Me.Label13 = New System.Windows.Forms.Label()
         Me.Label12 = New System.Windows.Forms.Label()
         Me.Label11 = New System.Windows.Forms.Label()
@@ -48,28 +55,22 @@ Partial Class frmPurchaseOrder
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.txt_grandTotal = New System.Windows.Forms.TextBox()
+        Me.txt_itemsNo = New System.Windows.Forms.TextBox()
+        Me.LBL = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btn_submit = New System.Windows.Forms.Button()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
-        Me.baseballpic = New System.Windows.Forms.PictureBox()
-        Me.tennispic = New System.Windows.Forms.PictureBox()
-        Me.footballpic = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.LBL = New System.Windows.Forms.Label()
-        Me.txt_itemsNo = New System.Windows.Forms.TextBox()
-        Me.txt_cost = New System.Windows.Forms.TextBox()
+        Me.btnCopyTo = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
-        Me.Panel4.SuspendLayout()
         CType(Me.baseballpic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.tennispic, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.footballpic, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -226,6 +227,76 @@ Partial Class frmPurchaseOrder
         Me.Panel3.Size = New System.Drawing.Size(631, 124)
         Me.Panel3.TabIndex = 11
         '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(500, 93)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(45, 13)
+        Me.Label15.TabIndex = 19
+        Me.Label15.Text = "Label15"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Location = New System.Drawing.Point(500, 59)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(39, 13)
+        Me.Label3.TabIndex = 18
+        Me.Label3.Text = "Label3"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(500, 30)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(39, 13)
+        Me.Label2.TabIndex = 17
+        Me.Label2.Text = "Label2"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(500, 11)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(40, 13)
+        Me.Label1.TabIndex = 16
+        Me.Label1.Text = "COST"
+        '
+        'baseballpic
+        '
+        Me.baseballpic.Image = Global.Purchase_Order_Form.My.Resources.Resources.sport_emojis_baseball
+        Me.baseballpic.Location = New System.Drawing.Point(29, 59)
+        Me.baseballpic.Name = "baseballpic"
+        Me.baseballpic.Size = New System.Drawing.Size(20, 20)
+        Me.baseballpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.baseballpic.TabIndex = 15
+        Me.baseballpic.TabStop = False
+        Me.baseballpic.Visible = False
+        '
+        'tennispic
+        '
+        Me.tennispic.Image = Global.Purchase_Order_Form.My.Resources.Resources.tennis_tiebreak
+        Me.tennispic.Location = New System.Drawing.Point(29, 90)
+        Me.tennispic.Name = "tennispic"
+        Me.tennispic.Size = New System.Drawing.Size(20, 20)
+        Me.tennispic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.tennispic.TabIndex = 14
+        Me.tennispic.TabStop = False
+        Me.tennispic.Visible = False
+        '
+        'footballpic
+        '
+        Me.footballpic.Image = Global.Purchase_Order_Form.My.Resources.Resources.soccer_activity
+        Me.footballpic.Location = New System.Drawing.Point(29, 27)
+        Me.footballpic.Name = "footballpic"
+        Me.footballpic.Size = New System.Drawing.Size(20, 20)
+        Me.footballpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.footballpic.TabIndex = 12
+        Me.footballpic.TabStop = False
+        Me.footballpic.Visible = False
+        '
         'Label13
         '
         Me.Label13.AutoSize = True
@@ -344,7 +415,8 @@ Partial Class frmPurchaseOrder
         'Panel4
         '
         Me.Panel4.BackColor = System.Drawing.Color.White
-        Me.Panel4.Controls.Add(Me.txt_cost)
+        Me.Panel4.Controls.Add(Me.btnCopyTo)
+        Me.Panel4.Controls.Add(Me.txt_grandTotal)
         Me.Panel4.Controls.Add(Me.txt_itemsNo)
         Me.Panel4.Controls.Add(Me.LBL)
         Me.Panel4.Controls.Add(Me.Button3)
@@ -355,6 +427,30 @@ Partial Class frmPurchaseOrder
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(616, 84)
         Me.Panel4.TabIndex = 12
+        '
+        'txt_grandTotal
+        '
+        Me.txt_grandTotal.Location = New System.Drawing.Point(74, 48)
+        Me.txt_grandTotal.Name = "txt_grandTotal"
+        Me.txt_grandTotal.Size = New System.Drawing.Size(98, 20)
+        Me.txt_grandTotal.TabIndex = 6
+        '
+        'txt_itemsNo
+        '
+        Me.txt_itemsNo.Location = New System.Drawing.Point(73, 17)
+        Me.txt_itemsNo.Name = "txt_itemsNo"
+        Me.txt_itemsNo.Size = New System.Drawing.Size(65, 20)
+        Me.txt_itemsNo.TabIndex = 5
+        '
+        'LBL
+        '
+        Me.LBL.AutoSize = True
+        Me.LBL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBL.Location = New System.Drawing.Point(6, 20)
+        Me.LBL.Name = "LBL"
+        Me.LBL.Size = New System.Drawing.Size(45, 13)
+        Me.LBL.TabIndex = 4
+        Me.LBL.Text = "ITEMS"
         '
         'Button3
         '
@@ -396,39 +492,6 @@ Partial Class frmPurchaseOrder
         Me.Label14.TabIndex = 0
         Me.Label14.Text = "TOTAL "
         '
-        'baseballpic
-        '
-        Me.baseballpic.Image = Global.Purchase_Order_Form.My.Resources.Resources.sport_emojis_baseball
-        Me.baseballpic.Location = New System.Drawing.Point(29, 59)
-        Me.baseballpic.Name = "baseballpic"
-        Me.baseballpic.Size = New System.Drawing.Size(20, 20)
-        Me.baseballpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.baseballpic.TabIndex = 15
-        Me.baseballpic.TabStop = False
-        Me.baseballpic.Visible = False
-        '
-        'tennispic
-        '
-        Me.tennispic.Image = Global.Purchase_Order_Form.My.Resources.Resources.tennis_tiebreak
-        Me.tennispic.Location = New System.Drawing.Point(29, 90)
-        Me.tennispic.Name = "tennispic"
-        Me.tennispic.Size = New System.Drawing.Size(20, 20)
-        Me.tennispic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.tennispic.TabIndex = 14
-        Me.tennispic.TabStop = False
-        Me.tennispic.Visible = False
-        '
-        'footballpic
-        '
-        Me.footballpic.Image = Global.Purchase_Order_Form.My.Resources.Resources.soccer_activity
-        Me.footballpic.Location = New System.Drawing.Point(29, 27)
-        Me.footballpic.Name = "footballpic"
-        Me.footballpic.Size = New System.Drawing.Size(20, 20)
-        Me.footballpic.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.footballpic.TabIndex = 12
-        Me.footballpic.TabStop = False
-        Me.footballpic.Visible = False
-        '
         'PictureBox1
         '
         Me.PictureBox1.Image = Global.Purchase_Order_Form.My.Resources.Resources.building_house_solid_72___Copy
@@ -439,66 +502,15 @@ Partial Class frmPurchaseOrder
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'Label1
+        'btnCopyTo
         '
-        Me.Label1.AutoSize = True
-        Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(500, 11)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(40, 13)
-        Me.Label1.TabIndex = 16
-        Me.Label1.Text = "COST"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(500, 30)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Label2"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(500, 59)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(39, 13)
-        Me.Label3.TabIndex = 18
-        Me.Label3.Text = "Label3"
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(500, 93)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(45, 13)
-        Me.Label15.TabIndex = 19
-        Me.Label15.Text = "Label15"
-        '
-        'LBL
-        '
-        Me.LBL.AutoSize = True
-        Me.LBL.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBL.Location = New System.Drawing.Point(6, 20)
-        Me.LBL.Name = "LBL"
-        Me.LBL.Size = New System.Drawing.Size(45, 13)
-        Me.LBL.TabIndex = 4
-        Me.LBL.Text = "ITEMS"
-        '
-        'txt_itemsNo
-        '
-        Me.txt_itemsNo.Location = New System.Drawing.Point(73, 17)
-        Me.txt_itemsNo.Name = "txt_itemsNo"
-        Me.txt_itemsNo.Size = New System.Drawing.Size(65, 20)
-        Me.txt_itemsNo.TabIndex = 5
-        '
-        'txt_cost
-        '
-        Me.txt_cost.Location = New System.Drawing.Point(74, 48)
-        Me.txt_cost.Name = "txt_cost"
-        Me.txt_cost.Size = New System.Drawing.Size(98, 20)
-        Me.txt_cost.TabIndex = 6
+        Me.btnCopyTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCopyTo.Location = New System.Drawing.Point(265, 49)
+        Me.btnCopyTo.Name = "btnCopyTo"
+        Me.btnCopyTo.Size = New System.Drawing.Size(75, 23)
+        Me.btnCopyTo.TabIndex = 7
+        Me.btnCopyTo.Text = "Copy To"
+        Me.btnCopyTo.UseVisualStyleBackColor = True
         '
         'frmPurchaseOrder
         '
@@ -520,11 +532,11 @@ Partial Class frmPurchaseOrder
         Me.Panel2.PerformLayout()
         Me.Panel3.ResumeLayout(False)
         Me.Panel3.PerformLayout()
-        Me.Panel4.ResumeLayout(False)
-        Me.Panel4.PerformLayout()
         CType(Me.baseballpic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.tennispic, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.footballpic, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.Panel4.ResumeLayout(False)
+        Me.Panel4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -569,7 +581,8 @@ Partial Class frmPurchaseOrder
     Friend WithEvents Label3 As Label
     Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents txt_cost As TextBox
+    Friend WithEvents txt_grandTotal As TextBox
     Friend WithEvents txt_itemsNo As TextBox
     Friend WithEvents LBL As Label
+    Friend WithEvents btnCopyTo As Button
 End Class

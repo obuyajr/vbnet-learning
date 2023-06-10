@@ -1,8 +1,12 @@
 ﻿Public Class frmPurchaseOrder
+
     Dim sVendorName As String
+    Dim aRecepients() As String
     Const dfootballprice As Decimal = 20
     Const dbaseballprice As Decimal = 10
     Const dtennisprice As Decimal = 10
+
+
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
@@ -13,26 +17,43 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
-        Dim qtyFootball As Integer = TextBox1.Text
-        Dim qtyBaseball As Integer = TextBox2.Text
-        Dim qtyTennis As Integer = TextBox3.Text
 
 
 
-        'calculations
-        Label2.Text = qtyFootball * dfootballprice
-        Label3.Text = qtyBaseball * dbaseballprice
-        Label15.Text = qtyTennis * dtennisprice
+        ''calculations
+        'Label2.Text = qtyFootball * dfootballprice
+        'Label3.Text = qtyBaseball * dbaseballprice
+        'Label15.Text = qtyTennis * dtennisprice
 
-        'TOTAL ITEMS
-        txt_itemsNo.Text = qtyTennis + qtyFootball + qtyBaseball
+        'Array to store values quantity coln
+        Dim quantity(3) As Integer
+        quantity(0) = TextBox1.Text
+        quantity(1) = TextBox2.Text
+        quantity(2) = TextBox3.Text
 
-        'total cost 
-        Dim costFootball As Decimal = Label2.Text
-        Dim costBaseball As Decimal = Label3.Text
-        Dim costTennis As Decimal = Label15.Text
+        'Array to store values price coln
+        Dim price(3) As Integer
+        price(0) = Label11.Text
+        price(1) = Label12.Text
+        price(2) = Label13.Text
 
-        txt_cost.Text = costBaseball + costFootball + costTennis
+        'array to store total cost results per (quantity * price)
+        Dim totalCost(3) As Decimal
+        totalCost(0) = price(0) * quantity(0)
+        totalCost(1) = price(1) * quantity(1)
+        totalCost(2) = price(2) * quantity(2)
+
+        'array to display in each cost column
+        Label2.Text = totalCost(0)
+        Label3.Text = totalCost(1)
+        Label15.Text = totalCost(2)
+
+        'calculate total items
+        txt_itemsNo.Text = quantity(0) + quantity(1) + quantity(2)
+
+        'calculate grand total
+        txt_grandTotal.Text = totalCost(0) + totalCost(1) + totalCost(2)
+
 
 
         MessageBox.Show("Your calculations: calculus", "Title", MessageBoxButtons.OKCancel,
@@ -65,6 +86,21 @@
     End Sub
 
     Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
+
+    End Sub
+
+    Private Sub btnCopyTo_Click(sender As Object, e As EventArgs) Handles btnCopyTo.Click
+        Dim snumRecepients As Short = InputBox("How many people to receive 
+                                        the purchase order?", "FORM RECEPIENTS")
+        Dim scounter As Short
+
+        ReDim aRecepients(snumRecepients - 1)
+
+        'aasign values to the array using input box
+        For scounter = 0 To UBound(aRecepients)
+            aRecepients(scounter) = InputBox("ENTER NAME: ")
+        Next
+
 
     End Sub
 End Class
