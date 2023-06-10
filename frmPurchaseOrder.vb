@@ -1,5 +1,13 @@
 ﻿Public Class frmPurchaseOrder
 
+    'structure for products
+    Public Structure lineItem
+        Public ProductName As String
+        Public Quantity As Integer
+        Public Price As Decimal
+
+    End Structure
+    '
     Dim sVendorName As String
     Dim aRecepients() As String
     Const dfootballprice As Decimal = 20
@@ -16,43 +24,33 @@
 
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_calculate.Click
+        Dim footballInfo As lineItem
 
+        'lineItem type variable
+        footballInfo.ProductName = "football"
+        footballInfo.Quantity = TextBox1.Text
+        footballInfo.Price = Label11.Text
 
+        Dim baseball As lineItem
 
-        ''calculations
-        'Label2.Text = qtyFootball * dfootballprice
-        'Label3.Text = qtyBaseball * dbaseballprice
-        'Label15.Text = qtyTennis * dtennisprice
+        'lineItem type variable
+        baseball.ProductName = "baseball"
+        baseball.Quantity = TextBox2.Text
+        baseball.Price = Label12.Text
 
-        'Array to store values quantity coln
-        Dim quantity(3) As Integer
-        quantity(0) = TextBox1.Text
-        quantity(1) = TextBox2.Text
-        quantity(2) = TextBox3.Text
+        Dim tennis As lineItem
 
-        'Array to store values price coln
-        Dim price(3) As Integer
-        price(0) = Label11.Text
-        price(1) = Label12.Text
-        price(2) = Label13.Text
+        'lineItem type variable
+        tennis.ProductName = "tennis"
+        tennis.Quantity = TextBox3.Text
+        tennis.Price = Label13.Text
 
-        'array to store total cost results per (quantity * price)
-        Dim totalCost(3) As Decimal
-        totalCost(0) = price(0) * quantity(0)
-        totalCost(1) = price(1) * quantity(1)
-        totalCost(2) = price(2) * quantity(2)
+        'total cost for each item
+        Label2.Text = footballInfo.Quantity * footballInfo.Price
+        Label3.Text = baseball.Quantity * baseball.Price
+        Label15.Text = tennis.Quantity * tennis.Price
 
-        'array to display in each cost column
-        Label2.Text = totalCost(0)
-        Label3.Text = totalCost(1)
-        Label15.Text = totalCost(2)
-
-        'calculate total items
-        txt_itemsNo.Text = quantity(0) + quantity(1) + quantity(2)
-
-        'calculate grand total
-        txt_grandTotal.Text = totalCost(0) + totalCost(1) + totalCost(2)
 
 
 
@@ -76,9 +74,19 @@
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
+        'store formatted elements in dynamic array
+        Dim sRecepientsMessage As String = "Copies are being sent to: " & vbCrLf
+
+        Dim scounter As Short
+
+        For scounter = 0 To UBound(aRecepients)
+            sRecepientsMessage = sRecepientsMessage & aRecepients(scounter) & vbCrLf
+
+        Next
 
         sVendorName = cboVendor.Text
-        MessageBox.Show("your order is being processed. the vendor is " & sVendorName, "ORDER VERIFICATION")
+        MessageBox.Show("your order is being processed. the vendor is " & sVendorName & vbCrLf & sRecepientsMessage, "ORDER VERIFICATION")
+
     End Sub
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click

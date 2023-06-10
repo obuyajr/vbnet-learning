@@ -55,15 +55,15 @@ Partial Class frmPurchaseOrder
         Me.CheckBox2 = New System.Windows.Forms.CheckBox()
         Me.CheckBox1 = New System.Windows.Forms.CheckBox()
         Me.Panel4 = New System.Windows.Forms.Panel()
+        Me.btnCopyTo = New System.Windows.Forms.Button()
         Me.txt_grandTotal = New System.Windows.Forms.TextBox()
         Me.txt_itemsNo = New System.Windows.Forms.TextBox()
         Me.LBL = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.btn_submit = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.btn_calculate = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.btnCopyTo = New System.Windows.Forms.Button()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -421,12 +421,22 @@ Partial Class frmPurchaseOrder
         Me.Panel4.Controls.Add(Me.LBL)
         Me.Panel4.Controls.Add(Me.Button3)
         Me.Panel4.Controls.Add(Me.btn_submit)
-        Me.Panel4.Controls.Add(Me.Button1)
+        Me.Panel4.Controls.Add(Me.btn_calculate)
         Me.Panel4.Controls.Add(Me.Label14)
         Me.Panel4.Location = New System.Drawing.Point(12, 365)
         Me.Panel4.Name = "Panel4"
         Me.Panel4.Size = New System.Drawing.Size(616, 84)
         Me.Panel4.TabIndex = 12
+        '
+        'btnCopyTo
+        '
+        Me.btnCopyTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btnCopyTo.Location = New System.Drawing.Point(265, 49)
+        Me.btnCopyTo.Name = "btnCopyTo"
+        Me.btnCopyTo.Size = New System.Drawing.Size(75, 23)
+        Me.btnCopyTo.TabIndex = 7
+        Me.btnCopyTo.Text = "Copy To"
+        Me.btnCopyTo.UseVisualStyleBackColor = True
         '
         'txt_grandTotal
         '
@@ -472,15 +482,15 @@ Partial Class frmPurchaseOrder
         Me.btn_submit.Text = "SUBMIT"
         Me.btn_submit.UseVisualStyleBackColor = True
         '
-        'Button1
+        'btn_calculate
         '
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(265, 20)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(89, 23)
-        Me.Button1.TabIndex = 1
-        Me.Button1.Text = "CALCULATE"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.btn_calculate.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.btn_calculate.Location = New System.Drawing.Point(265, 20)
+        Me.btn_calculate.Name = "btn_calculate"
+        Me.btn_calculate.Size = New System.Drawing.Size(89, 23)
+        Me.btn_calculate.TabIndex = 1
+        Me.btn_calculate.Text = "CALCULATE"
+        Me.btn_calculate.UseVisualStyleBackColor = True
         '
         'Label14
         '
@@ -501,16 +511,6 @@ Partial Class frmPurchaseOrder
         Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
-        '
-        'btnCopyTo
-        '
-        Me.btnCopyTo.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.btnCopyTo.Location = New System.Drawing.Point(265, 49)
-        Me.btnCopyTo.Name = "btnCopyTo"
-        Me.btnCopyTo.Size = New System.Drawing.Size(75, 23)
-        Me.btnCopyTo.TabIndex = 7
-        Me.btnCopyTo.Text = "Copy To"
-        Me.btnCopyTo.UseVisualStyleBackColor = True
         '
         'frmPurchaseOrder
         '
@@ -572,7 +572,7 @@ Partial Class frmPurchaseOrder
     Friend WithEvents Label14 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents btn_submit As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents btn_calculate As Button
     Friend WithEvents lblOrderNumber As Label
     Friend WithEvents footballpic As PictureBox
     Friend WithEvents baseballpic As PictureBox
