@@ -13,6 +13,7 @@
     Const dfootballprice As Decimal = 20
     Const dbaseballprice As Decimal = 10
     Const dtennisprice As Decimal = 10
+    Dim merchandise As New Collection()
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -25,35 +26,36 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_calculate.Click
-
-
-        'lineItem type variable
-        footballInfo.ProductName = "football"
-        footballInfo.Quantity = TextBox1.Text
-        footballInfo.Price = Label11.Text
-
-
+        'array of linr item type
+        Dim product(3) As lineItem
 
         'lineItem type variable
-        baseball.ProductName = "baseball"
-        baseball.Quantity = TextBox2.Text
-        baseball.Price = Label12.Text
+        product(0).ProductName = "football"
+        product(0).Quantity = TextBox1.Text
+        product(0).Price = Label11.Text
 
 
 
         'lineItem type variable
-        tennis.ProductName = "tennis"
-        tennis.Quantity = TextBox3.Text
-        tennis.Price = Label13.Text
+        product(1).ProductName = "baseball"
+        product(1).Quantity = TextBox2.Text
+        product(1).Price = Label12.Text
+
+
+
+        'lineItem type variable
+        product(2).ProductName = "tennis"
+        product(2).Quantity = TextBox3.Text
+        product(2).Price = Label13.Text
 
         'total cost for each item
-        Label2.Text = footballInfo.Quantity * footballInfo.Price
-        Label3.Text = baseball.Quantity * baseball.Price
-        Label15.Text = tennis.Quantity * tennis.Price
+        Label2.Text = product(0).Quantity * product(0).Price
+        Label3.Text = product(1).Quantity * product(1).Price
+        Label15.Text = product(2).Quantity * product(2).Price
 
         'no of items
-        txt_itemsNo.Text = CInt(footballInfo.Quantity) + CInt(baseball.Quantity) +
-                            CInt(tennis.Quantity)
+        txt_itemsNo.Text = CInt(product(0).Quantity) + CInt(product(1).Quantity) +
+                            CInt(product(2).Quantity)
 
         txt_grandTotal.Text = CDec(Label2.Text) + CDec(Label3.Text) + CDec(Label15.Text)
 
