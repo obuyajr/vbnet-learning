@@ -31,6 +31,11 @@
         Label12.Text = dbaseballprice
         Label13.Text = dtennisprice
 
+        Dim options As ShippingOptions
+
+        cboShopVia.DataSource = options.GetNames(options.GetType)
+
+
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_calculate.Click

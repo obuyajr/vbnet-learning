@@ -26,7 +26,7 @@ Partial Class frmPurchaseOrder
         Me.lblOrder = New System.Windows.Forms.Label()
         Me.cboVendor = New System.Windows.Forms.ComboBox()
         Me.lblVendor = New System.Windows.Forms.Label()
-        Me.ComboBox2 = New System.Windows.Forms.ComboBox()
+        Me.cboShopVia = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Panel1 = New System.Windows.Forms.Panel()
@@ -112,13 +112,13 @@ Partial Class frmPurchaseOrder
         Me.lblVendor.Text = "Vendor "
         Me.lblVendor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         '
-        'ComboBox2
+        'cboShopVia
         '
-        Me.ComboBox2.FormattingEnabled = True
-        Me.ComboBox2.Location = New System.Drawing.Point(124, 8)
-        Me.ComboBox2.Name = "ComboBox2"
-        Me.ComboBox2.Size = New System.Drawing.Size(142, 21)
-        Me.ComboBox2.TabIndex = 0
+        Me.cboShopVia.FormattingEnabled = True
+        Me.cboShopVia.Location = New System.Drawing.Point(124, 8)
+        Me.cboShopVia.Name = "cboShopVia"
+        Me.cboShopVia.Size = New System.Drawing.Size(142, 21)
+        Me.cboShopVia.TabIndex = 0
         '
         'Label4
         '
@@ -183,7 +183,7 @@ Partial Class frmPurchaseOrder
         Me.Panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
         Me.Panel2.Controls.Add(Me.Label7)
         Me.Panel2.Controls.Add(Me.Label4)
-        Me.Panel2.Controls.Add(Me.ComboBox2)
+        Me.Panel2.Controls.Add(Me.cboShopVia)
         Me.Panel2.Controls.Add(Me.Label5)
         Me.Panel2.Location = New System.Drawing.Point(415, 88)
         Me.Panel2.Name = "Panel2"
@@ -548,7 +548,7 @@ Partial Class frmPurchaseOrder
     Friend WithEvents lblOrder As Label
     Friend WithEvents cboVendor As ComboBox
     Friend WithEvents lblVendor As Label
-    Friend WithEvents ComboBox2 As ComboBox
+    Friend WithEvents cboShopVia As ComboBox
     Friend WithEvents Label4 As Label
     Friend WithEvents Label5 As Label
     Friend WithEvents Panel1 As Panel
