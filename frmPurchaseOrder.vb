@@ -39,8 +39,9 @@
 
         cboShopVia.DataSource = options.GetNames(options.GetType)
 
-        iOrderNumber = 1000
+        CreateRandomNumber()
         Label16.Text = iOrderNumber
+
 
 
     End Sub
@@ -69,9 +70,9 @@
         product(2).Price = Label13.Text
 
         'total cost for each item
-        Label2.Text = product(0).Quantity * product(0).Price
-        Label3.Text = product(1).Quantity * product(1).Price
-        Label15.Text = product(2).Quantity * product(2).Price
+        Label2.Text = FormatCurrency(product(0).Quantity * product(0).Price)
+        Label3.Text = FormatCurrency(product(1).Quantity * product(1).Price)
+        Label15.Text = FormatCurrency(product(2).Quantity * product(2).Price)
 
         'assign to their global variables
         sFootballCost = Label2.Text
@@ -86,8 +87,12 @@
         sTotalQuantityOrdered = txt_itemsNo.Text
 
 
-        txt_grandTotal.Text = CDec(Label2.Text) + CDec(Label3.Text) + CDec(Label15.Text)
+        txt_grandTotal.Text = FormatCurrency(CDec(Label2.Text) + CDec(Label3.Text) + CDec(Label15.Text))
         sTotalCost = txt_grandTotal.Text
+
+        '
+        dCostTax = Tax(sTotalCost)
+        dTotalShip = Shipping(dCostTax)
 
         MessageBox.Show("Your calculations: calculus", "Title", MessageBoxButtons.OKCancel,
                         MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1)
@@ -121,6 +126,8 @@
 
         sVendorName = cboVendor.Text
         MessageBox.Show("your order is being processed. the vendor is " & sVendorName & vbCrLf & sRecepientsMessage, "ORDER VERIFICATION")
+        Me.Close()
+        reports.Close()
 
     End Sub
 
@@ -154,6 +161,14 @@
 
     Private Sub btnSummary_Click(sender As Object, e As EventArgs) Handles btnSummary.Click
         reports.Show()
+
+    End Sub
+
+    Private Sub CreateRandomNumber()
+        Dim randomNumber As Single
+        Randomize()
+        randomNumber = Rnd()
+        iOrderNumber = randomNumber * 1000
 
     End Sub
 End Class

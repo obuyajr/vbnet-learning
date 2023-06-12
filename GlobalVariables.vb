@@ -17,4 +17,10 @@
     'global variables for orderNumber
     Public iOrderNumber As Integer
 
+    'returned by tax()
+    Public dCostTax As Decimal
+
+    'value from shipping function
+    Public dTotalShip As Decimal
+
 End Module
