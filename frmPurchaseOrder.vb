@@ -25,21 +25,21 @@
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_calculate.Click
-        Dim footballInfo As lineItem
+
 
         'lineItem type variable
         footballInfo.ProductName = "football"
         footballInfo.Quantity = TextBox1.Text
         footballInfo.Price = Label11.Text
 
-        Dim baseball As lineItem
+
 
         'lineItem type variable
         baseball.ProductName = "baseball"
         baseball.Quantity = TextBox2.Text
         baseball.Price = Label12.Text
 
-        Dim tennis As lineItem
+
 
         'lineItem type variable
         tennis.ProductName = "tennis"
@@ -51,7 +51,11 @@
         Label3.Text = baseball.Quantity * baseball.Price
         Label15.Text = tennis.Quantity * tennis.Price
 
+        'no of items
+        txt_itemsNo.Text = CInt(footballInfo.Quantity) + CInt(baseball.Quantity) +
+                            CInt(tennis.Quantity)
 
+        txt_grandTotal.Text = CDec(Label2.Text) + CDec(Label3.Text) + CDec(Label15.Text)
 
 
         MessageBox.Show("Your calculations: calculus", "Title", MessageBoxButtons.OKCancel,
