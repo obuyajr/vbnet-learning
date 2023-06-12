@@ -21,6 +21,10 @@
     Const dbaseballprice As Decimal = 10
     Const dtennisprice As Decimal = 10
 
+    'declare instance of Purchase Order summary
+    Dim reports As New Purchase_Order_Summary()
+
+
 
 
 
@@ -34,6 +38,9 @@
         Dim options As ShippingOptions
 
         cboShopVia.DataSource = options.GetNames(options.GetType)
+
+        iOrderNumber = 1000
+        Label16.Text = iOrderNumber
 
 
     End Sub
@@ -66,12 +73,21 @@
         Label3.Text = product(1).Quantity * product(1).Price
         Label15.Text = product(2).Quantity * product(2).Price
 
+        'assign to their global variables
+        sFootballCost = Label2.Text
+        sBaseBall = Label3.Text
+        sTennis = Label15.Text
+
         'no of items
         txt_itemsNo.Text = CInt(product(0).Quantity) + CInt(product(1).Quantity) +
                             CInt(product(2).Quantity)
 
-        txt_grandTotal.Text = CDec(Label2.Text) + CDec(Label3.Text) + CDec(Label15.Text)
+        'assign total items ordered to global var
+        sTotalQuantityOrdered = txt_itemsNo.Text
 
+
+        txt_grandTotal.Text = CDec(Label2.Text) + CDec(Label3.Text) + CDec(Label15.Text)
+        sTotalCost = txt_grandTotal.Text
 
         MessageBox.Show("Your calculations: calculus", "Title", MessageBoxButtons.OKCancel,
                         MessageBoxIcon.Asterisk, MessageBoxDefaultButton.Button1)
@@ -128,6 +144,16 @@
             aRecepients(scounter) = InputBox("ENTER NAME: ")
         Next
 
+
+    End Sub
+
+    Private Sub cboVendor_SelectedIndexChanged(sender As Object, e As EventArgs) Handles cboVendor.SelectedIndexChanged
+        sVendor = cboVendor.Text
+
+    End Sub
+
+    Private Sub btnSummary_Click(sender As Object, e As EventArgs) Handles btnSummary.Click
+        reports.Show()
 
     End Sub
 End Class
