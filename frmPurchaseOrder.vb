@@ -7,13 +7,21 @@
         Public Price As Decimal
 
     End Structure
+
+    Public Enum ShippingOptions As Byte
+        OverNightAir = 1
+        Air = 2
+        Ground = 3
+
+    End Enum
     '
     Dim sVendorName As String
     Dim aRecepients() As String
     Const dfootballprice As Decimal = 20
     Const dbaseballprice As Decimal = 10
     Const dtennisprice As Decimal = 10
-    Dim merchandise As New Collection()
+
+
 
 
     Private Sub Form1_Load(sender As Object, e As EventArgs) Handles MyBase.Load

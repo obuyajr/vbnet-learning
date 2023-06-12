@@ -11,3 +11,4 @@ C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Or
 C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.xml
 C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase Order Form.pdb
 C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase_Order_Form.frmPurchaseOrder.resources
+C:\Users\felix\OneDrive\Desktop\VB net\Purchase Order Form\obj\Debug\Purchase_Order_Form.Product_Requests.resources

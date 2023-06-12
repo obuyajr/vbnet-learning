@@ -96,6 +96,12 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="Product Requests.Designer.vb">
+      <DependentUpon>Product Requests.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Product Requests.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="frmPurchaseOrder.resx">
@@ -106,6 +112,9 @@
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Product Requests.resx">
+      <DependentUpon>Product Requests.vb</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
