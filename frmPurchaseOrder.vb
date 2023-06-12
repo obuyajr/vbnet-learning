@@ -100,17 +100,38 @@
     End Sub
 
     Private Sub CheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox1.CheckedChanged
-        'displays footyball gif
-        footballpic.Visible = True
+        If CheckBox1.Checked = True Then
+            TextBox1.Enabled = True
+            'displays footyball gif
+            footballpic.Visible = True
+        Else
+            footballpic.Visible = False
+            TextBox1.Enabled = False
+        End If
+
 
     End Sub
 
     Private Sub CheckBox2_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox2.CheckedChanged
-        baseballpic.Visible = True
+        If CheckBox2.Checked = True Then
+            TextBox2.Enabled = True
+            'displays footyball gif
+            baseballpic.Visible = True
+        Else
+            baseballpic.Visible = False
+            TextBox2.Enabled = False
+        End If
     End Sub
 
     Private Sub CheckBox3_CheckedChanged(sender As Object, e As EventArgs) Handles CheckBox3.CheckedChanged
-        tennispic.Visible = True
+        If CheckBox3.Checked = True Then
+            TextBox3.Enabled = True
+            'displays footyball gif
+            tennispic.Visible = True
+        Else
+            tennispic.Visible = False
+            TextBox3.Enabled = False
+        End If
     End Sub
 
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
@@ -133,6 +154,7 @@
 
     Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
         MessageBox.Show("FORM WILL BE RESET", "RESET FORM", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+        ResetForm()
     End Sub
 
     Private Sub Label14_Click(sender As Object, e As EventArgs) Handles Label14.Click
@@ -171,4 +193,25 @@
         iOrderNumber = randomNumber * 1000
 
     End Sub
+
+    Private Sub ResetForm()
+        TextBox1.Text = ""
+        TextBox2.Text = ""
+        TextBox3.Text = ""
+        Label2.Text = ""
+        Label3.Text = ""
+        Label15.Text = ""
+        txt_itemsNo.Text = ""
+        txt_grandTotal.Text = ""
+        cboVendor.Text = ""
+        cboShopVia.Text = ""
+        CheckBox1.Checked = False
+        CheckBox2.Checked = False
+        CheckBox3.Checked = False
+        footballpic.Visible = False
+        baseballpic.Visible = False
+        tennispic.Visible = False
+
+    End Sub
+
 End Class
