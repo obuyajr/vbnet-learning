@@ -9,6 +9,7 @@
         Label7.Text = sTotalCost
         Label8.Text = FormatCurrency(dCostTax)
         Label9.Text = FormatCurrency(dTotalShip)
+        Label10.Text = sShipSelection
 
 
     End Sub

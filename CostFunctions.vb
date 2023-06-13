@@ -13,8 +13,19 @@
     Function Shipping(ByVal charge As Decimal) As Decimal
 
         Dim ship As Decimal
-        ship = charge + 2.4
+        Select Case iShipId
+            Case "1"
+                ship = charge + 7.0
+
+            Case "2"
+                ship = charge + 4.5
+            Case "3"
+                ship = charge + 2.4
+
+        End Select
+
         Return ship
+
     End Function
 
 End Module

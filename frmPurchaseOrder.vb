@@ -1,4 +1,6 @@
-﻿Public Class frmPurchaseOrder
+﻿Imports System.Runtime.InteropServices.ComTypes
+
+Public Class frmPurchaseOrder
 
     'structure for products
     Public Structure lineItem
@@ -50,29 +52,55 @@
         'array of linr item type
         Dim product(3) As lineItem
 
-        'lineItem type variable
-        product(0).ProductName = "football"
-        product(0).Quantity = TextBox1.Text
-        product(0).Price = Label11.Text
+        'check if value entered is numeric
+
+        If IsNumeric(TextBox1.Text) Then
+
+            'lineItem type variable
+            product(0).ProductName = "football"
+            product(0).Quantity = TextBox1.Text
+            product(0).Price = Label11.Text
+            Label2.Text = FormatCurrency(product(0).Quantity * product(0).Price)
+
+        Else
+            product(0).Quantity = 0
+            Label2.Text = 0
+
+        End If
 
 
 
-        'lineItem type variable
-        product(1).ProductName = "baseball"
-        product(1).Quantity = TextBox2.Text
-        product(1).Price = Label12.Text
+        If IsNumeric(TextBox2.Text) Then
+
+            'lineItem type variable
+            product(1).ProductName = "baseball"
+            product(1).Quantity = TextBox2.Text
+            product(1).Price = Label12.Text
+            Label3.Text = FormatCurrency(product(1).Quantity * product(1).Price)
+
+        Else
+            product(1).Quantity = 0
+            Label3.Text = 0
+
+        End If
 
 
 
-        'lineItem type variable
-        product(2).ProductName = "tennis"
-        product(2).Quantity = TextBox3.Text
-        product(2).Price = Label13.Text
 
-        'total cost for each item
-        Label2.Text = FormatCurrency(product(0).Quantity * product(0).Price)
-        Label3.Text = FormatCurrency(product(1).Quantity * product(1).Price)
-        Label15.Text = FormatCurrency(product(2).Quantity * product(2).Price)
+        If IsNumeric(TextBox2.Text) Then
+            'lineItem type variable
+            product(2).ProductName = "tennis"
+            product(2).Quantity = TextBox3.Text
+            product(2).Price = Label13.Text
+
+            Label15.Text = FormatCurrency(product(2).Quantity * product(2).Price)
+
+        Else
+            product(2).Quantity = 0
+            Label15.Text = 0
+
+        End If
+
 
         'assign to their global variables
         sFootballCost = Label2.Text
@@ -92,6 +120,8 @@
 
         '
         dCostTax = Tax(sTotalCost)
+        ShippingSelection()
+
         dTotalShip = Shipping(dCostTax)
 
         MessageBox.Show("Your calculations: calculus", "Title", MessageBoxButtons.OKCancel,
@@ -137,13 +167,13 @@
     Private Sub Button2_Click(sender As Object, e As EventArgs) Handles btn_submit.Click
         'store formatted elements in dynamic array
         Dim sRecepientsMessage As String = "Copies are being sent to: " & vbCrLf
+        Dim scounter As String
 
-        Dim scounter As Short
-
-        For scounter = 0 To UBound(aRecepients)
-            sRecepientsMessage = sRecepientsMessage & aRecepients(scounter) & vbCrLf
-
+        For Each scounter In aRecepients
+            sRecepientsMessage = sRecepientsMessage & scounter & vbCrLf
         Next
+
+
 
         sVendorName = cboVendor.Text
         MessageBox.Show("your order is being processed. the vendor is " & sVendorName & vbCrLf & sRecepientsMessage, "ORDER VERIFICATION")
@@ -212,6 +242,24 @@
         baseballpic.Visible = False
         tennispic.Visible = False
 
+    End Sub
+
+    Private Sub ShippingSelection()
+        sShipSelection = cboShopVia.Text
+        Select Case sShipSelection
+            Case "OverNightAir"
+                iShipId = ShippingOptions.OverNightAir
+
+            Case "Air"
+                iShipId = ShippingOptions.Air
+
+            Case "Ground"
+                iShipId = ShippingOptions.Ground
+
+
+
+
+        End Select
     End Sub
 
 End Class

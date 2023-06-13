@@ -23,4 +23,8 @@
     'value from shipping function
     Public dTotalShip As Decimal
 
+    '
+    Public iShipId As Byte
+    Public sShipSelection As String
+
 End Module
