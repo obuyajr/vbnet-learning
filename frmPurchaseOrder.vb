@@ -49,27 +49,41 @@ Public Class frmPurchaseOrder
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles btn_calculate.Click
+        'clear errorprovider
+        ErrorProvider1.SetError(TextBox1, "")
+
         'array of linr item type
         Dim product(3) As lineItem
 
         'check if value entered is numeric
-
         If IsNumeric(TextBox1.Text) Then
+            If TextBox1.Text > 0 Then
+                'lineItem type variable
+                product(0).ProductName = "football"
+                product(0).Quantity = TextBox1.Text
+                product(0).Price = Label11.Text
+                Dim total_football As Decimal =
+                                   FormatCurrency(product(0).Quantity * product(0).Price)
 
-            'lineItem type variable
-            product(0).ProductName = "football"
-            product(0).Quantity = TextBox1.Text
-            product(0).Price = Label11.Text
-            Label2.Text = FormatCurrency(product(0).Quantity * product(0).Price)
+                txt_footbal_cost.Text = total_football
+
+            Else
+
+                ErrorProvider1.SetError(TextBox1, "value lower than 0")
+                TextBox1.Focus()
+                TextBox1.SelectAll()
+
+            End If
 
         Else
+
             product(0).Quantity = 0
-            Label2.Text = 0
+            txt_footbal_cost.Text = 0
 
         End If
 
 
-
+        'check if value entered is numeric
         If IsNumeric(TextBox2.Text) Then
 
             'lineItem type variable
@@ -103,20 +117,20 @@ Public Class frmPurchaseOrder
 
 
         'assign to their global variables
-        sFootballCost = Label2.Text
+        sFootballCost = txt_footbal_cost.Text
         sBaseBall = Label3.Text
         sTennis = Label15.Text
 
         'no of items
-        txt_itemsNo.Text = CInt(product(0).Quantity) + CInt(product(1).Quantity) +
-                            CInt(product(2).Quantity)
+        '  txt_itemsNo.Text = CInt(product(0).Quantity) + CInt(product(1).Quantity) +
+        'CInt(product(2).Quantity)
 
         'assign total items ordered to global var
         sTotalQuantityOrdered = txt_itemsNo.Text
 
 
-        txt_grandTotal.Text = FormatCurrency(CDec(Label2.Text) + CDec(Label3.Text) + CDec(Label15.Text))
-        sTotalCost = txt_grandTotal.Text
+        ' txt_grandTotal.Text = FormatCurrency(CDec(txt_footbal_cost.Text) + CDec(Label3.Text) + CDec(Label15.Text))
+        ' sTotalCost = txt_grandTotal.Text
 
         '
         dCostTax = Tax(sTotalCost)
@@ -228,7 +242,7 @@ Public Class frmPurchaseOrder
         TextBox1.Text = ""
         TextBox2.Text = ""
         TextBox3.Text = ""
-        Label2.Text = ""
+        txt_footbal_cost.Text = ""
         Label3.Text = ""
         Label15.Text = ""
         txt_itemsNo.Text = ""
@@ -260,6 +274,24 @@ Public Class frmPurchaseOrder
 
 
         End Select
+    End Sub
+    Private Sub Calculations(ByVal product() As lineItem)
+        Dim item As lineItem
+
+        For Each item In product
+
+            If item.ProductName <> "" Then
+
+                sTotalCost = sTotalCost + item.Quantity * item.Price
+                txt_grandTotal.Text = FormatCurrency(sTotalCost)
+
+                sTotalQuantityOrdered = sTotalQuantityOrdered + item.Quantity
+                txt_itemsNo.Text = sTotalQuantityOrdered
+
+            End If
+
+        Next
+
     End Sub
 
 End Class

@@ -22,6 +22,7 @@ Partial Class frmPurchaseOrder
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Me.DateTimePicker1 = New System.Windows.Forms.DateTimePicker()
         Me.lblOrder = New System.Windows.Forms.Label()
         Me.cboVendor = New System.Windows.Forms.ComboBox()
@@ -37,7 +38,6 @@ Partial Class frmPurchaseOrder
         Me.Panel3 = New System.Windows.Forms.Panel()
         Me.Label15 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.baseballpic = New System.Windows.Forms.PictureBox()
         Me.tennispic = New System.Windows.Forms.PictureBox()
@@ -65,6 +65,10 @@ Partial Class frmPurchaseOrder
         Me.btn_calculate = New System.Windows.Forms.Button()
         Me.Label14 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
+        Me.ErrorProvider1 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ErrorProvider2 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.ErrorProvider3 = New System.Windows.Forms.ErrorProvider(Me.components)
+        Me.txt_footbal_cost = New System.Windows.Forms.TextBox()
         Me.Panel1.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.Panel3.SuspendLayout()
@@ -73,6 +77,9 @@ Partial Class frmPurchaseOrder
         CType(Me.footballpic, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Panel4.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ErrorProvider3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'DateTimePicker1
@@ -202,9 +209,9 @@ Partial Class frmPurchaseOrder
         '
         Me.Panel3.BackColor = System.Drawing.Color.LightSkyBlue
         Me.Panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D
+        Me.Panel3.Controls.Add(Me.txt_footbal_cost)
         Me.Panel3.Controls.Add(Me.Label15)
         Me.Panel3.Controls.Add(Me.Label3)
-        Me.Panel3.Controls.Add(Me.Label2)
         Me.Panel3.Controls.Add(Me.Label1)
         Me.Panel3.Controls.Add(Me.baseballpic)
         Me.Panel3.Controls.Add(Me.tennispic)
@@ -243,15 +250,6 @@ Partial Class frmPurchaseOrder
         Me.Label3.Size = New System.Drawing.Size(39, 13)
         Me.Label3.TabIndex = 18
         Me.Label3.Text = "Label3"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(500, 30)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(39, 13)
-        Me.Label2.TabIndex = 17
-        Me.Label2.Text = "Label2"
         '
         'Label1
         '
@@ -525,6 +523,25 @@ Partial Class frmPurchaseOrder
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
+        'ErrorProvider1
+        '
+        Me.ErrorProvider1.ContainerControl = Me
+        '
+        'ErrorProvider2
+        '
+        Me.ErrorProvider2.ContainerControl = Me
+        '
+        'ErrorProvider3
+        '
+        Me.ErrorProvider3.ContainerControl = Me
+        '
+        'txt_footbal_cost
+        '
+        Me.txt_footbal_cost.Location = New System.Drawing.Point(490, 27)
+        Me.txt_footbal_cost.Name = "txt_footbal_cost"
+        Me.txt_footbal_cost.Size = New System.Drawing.Size(73, 20)
+        Me.txt_footbal_cost.TabIndex = 20
+        '
         'frmPurchaseOrder
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -551,6 +568,9 @@ Partial Class frmPurchaseOrder
         Me.Panel4.ResumeLayout(False)
         Me.Panel4.PerformLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ErrorProvider3, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -591,7 +611,6 @@ Partial Class frmPurchaseOrder
     Friend WithEvents tennispic As PictureBox
     Friend WithEvents Label15 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents Label1 As Label
     Friend WithEvents txt_grandTotal As TextBox
     Friend WithEvents txt_itemsNo As TextBox
@@ -599,4 +618,8 @@ Partial Class frmPurchaseOrder
     Friend WithEvents btnCopyTo As Button
     Friend WithEvents Label16 As Label
     Friend WithEvents btnSummary As Button
+    Friend WithEvents ErrorProvider1 As ErrorProvider
+    Friend WithEvents ErrorProvider2 As ErrorProvider
+    Friend WithEvents ErrorProvider3 As ErrorProvider
+    Friend WithEvents txt_footbal_cost As TextBox
 End Class
