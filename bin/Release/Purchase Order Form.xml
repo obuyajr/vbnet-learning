@@ -1,0 +1,51 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Purchase Order Form
+</name>
+</assembly>
+<members>
+<member name="T:Purchase_Order_Form.My.Resources.Resources">
+<summary>
+  A strongly-typed resource class, for looking up localized strings, etc.
+</summary>
+</member>
+<member name="P:Purchase_Order_Form.My.Resources.Resources.ResourceManager">
+<summary>
+  Returns the cached ResourceManager instance used by this class.
+</summary>
+</member>
+<member name="P:Purchase_Order_Form.My.Resources.Resources.Culture">
+<summary>
+  Overrides the current thread's CurrentUICulture property for all
+  resource lookups using this strongly typed resource class.
+</summary>
+</member>
+<member name="P:Purchase_Order_Form.My.Resources.Resources.bible_fruit_raintree_guest_house_farm_logo_png_favpng_zuW9wMJ6hLnUaF588GnAvbraX_t">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Purchase_Order_Form.My.Resources.Resources.building_house_solid_72___Copy">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Purchase_Order_Form.My.Resources.Resources.soccer_activity">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Purchase_Order_Form.My.Resources.Resources.sport_emojis_baseball">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+<member name="P:Purchase_Order_Form.My.Resources.Resources.tennis_tiebreak">
+<summary>
+  Looks up a localized resource of type System.Drawing.Bitmap.
+</summary>
+</member>
+</members>
+</doc>
